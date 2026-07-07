@@ -123,6 +123,27 @@ function M.ApplyMaxLevelFallback(plr)
 		M.NameMon = "Gorilla"
 		M.PosQ = CFrame.new(-1598.08911, 35.5501175, 153.377838, 0, 0, 1, 0, 1, -0, -1, 0, 0)
 		M.PosM = CFrame.new(-1129.8836669921875, 40.46354675292969, -525.4237060546875)
+	elseif M.World1 and lv >= 30 and lv <= 39 then
+		M.Mon = "Pirate"
+		M.Qdata = 1
+		M.Qname = "BuggyQuest1"
+		M.NameMon = "Pirate"
+		M.PosQ = CFrame.new(-1141.07483, 4.10001802, 3831.5498, 0.965929627, 0, -0.258804798, 0, 1, 0, 0.258804798, 0, 0.965929627)
+		M.PosM = CFrame.new(-1103.513427734375, 13.752052307128906, 3896.091064453125)
+	elseif M.World1 and lv >= 40 and lv <= 59 then
+		M.Mon = "Brute"
+		M.Qdata = 2
+		M.Qname = "BuggyQuest1"
+		M.NameMon = "Brute"
+		M.PosQ = CFrame.new(-1141.07483, 4.10001802, 3831.5498, 0.965929627, 0, -0.258804798, 0, 1, 0, 0.258804798, 0, 0.965929627)
+		M.PosM = CFrame.new(-1140.083740234375, 14.809885025024414, 4322.92138671875)
+	elseif M.World1 and lv >= 60 and lv <= 74 then
+		M.Mon = "Desert Bandit"
+		M.Qdata = 1
+		M.Qname = "DesertQuest"
+		M.NameMon = "Desert Bandit"
+		M.PosQ = CFrame.new(894.488647, 5.14000702, 4392.43359, 0.819155693, 0, -0.573571265, 0, 1, 0, 0.573571265, 0, 0.819155693)
+		M.PosM = CFrame.new(924.7998046875, 6.44867467880249, 4481.5859375)
 	end
 end
 
