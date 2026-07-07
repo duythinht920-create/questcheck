@@ -1,4 +1,3 @@
-
 local M = {}
 
 function M.RefreshWorld()
@@ -19,6 +18,14 @@ function M.RefreshWorld()
 			M.World2 = true
 			return
 		end
+		if map:FindFirstChild("Jungle") or map:FindFirstChild("Buggy") or map:FindFirstChild("Desert")
+			or map:FindFirstChild("Ice") or map:FindFirstChild("Marine") or map:FindFirstChild("Middle Island")
+			or map:FindFirstChild("Skypiea") or map:FindFirstChild("UpperSky") or map:FindFirstChild("LowerSky")
+			or map:FindFirstChild("Prison") or map:FindFirstChild("Magma") or map:FindFirstChild("Fishman")
+			or map:FindFirstChild("Fountain") then
+			M.World1 = true
+			return
+		end
 	end
 	local wo = workspace:FindFirstChild("_WorldOrigin") or workspace:FindFirstChild("_WorldOrigins")
 	if wo and wo:FindFirstChild("Locations") then
@@ -28,7 +35,18 @@ function M.RefreshWorld()
 			M.World3 = true
 		elseif loc:FindFirstChild("Green Zone") or loc:FindFirstChild("Mansion") then
 			M.World2 = true
+		elseif loc:FindFirstChild("Jungle") or loc:FindFirstChild("Pirate Village")
+			or loc:FindFirstChild("Desert") or loc:FindFirstChild("Frozen Village")
+			or loc:FindFirstChild("Marine Fortress") or loc:FindFirstChild("Middle Town")
+			or loc:FindFirstChild("Starter Island") or loc:FindFirstChild("Skylands")
+			or loc:FindFirstChild("Prison") or loc:FindFirstChild("Colosseum")
+			or loc:FindFirstChild("Magma Village") or loc:FindFirstChild("Underwater City")
+			or loc:FindFirstChild("Fountain City") then
+			M.World1 = true
 		end
+	end
+	if not M.World1 and not M.World2 and not M.World3 then
+		M.World1 = true
 	end
 end
 
@@ -84,13 +102,27 @@ function M.ApplyMaxLevelFallback(plr)
 		M.NameMon = "Water Fighter"
 		M.PosQ = CFrame.new(-3054.44458, 235.544281, -10142.8193, 0.990270376, -0, -0.13915664, 0, 1, -0, 0.13915664, 0, 0.990270376)
 		M.PosM = CFrame.new(-3352.9013671875, 285.01556396484375, -10534.841796875)
-	elseif M.World1 then
+	elseif M.World1 and lv >= 650 then
 		M.Mon = "Galley Captain"
 		M.Qdata = 2
 		M.Qname = "FountainQuest"
 		M.NameMon = "Galley Captain"
 		M.PosQ = CFrame.new(5259.81982, 37.3500175, 4050.0293, 0.087131381, 0, 0.996196866, 0, 1, 0, -0.996196866, 0, 0.087131381)
 		M.PosM = CFrame.new(5441.95166015625, 42.50205993652344, 4950.09375)
+	elseif M.World1 and lv >= 10 and lv <= 14 then
+		M.Mon = "Monkey"
+		M.Qdata = 1
+		M.Qname = "JungleQuest"
+		M.NameMon = "Monkey"
+		M.PosQ = CFrame.new(-1598.08911, 35.5501175, 153.377838, 0, 0, 1, 0, 1, -0, -1, 0, 0)
+		M.PosM = CFrame.new(-1346.5205078125, 73.958251953125, 12.177734375)
+	elseif M.World1 and lv >= 15 and lv <= 29 then
+		M.Mon = "Gorilla"
+		M.Qdata = 2
+		M.Qname = "JungleQuest"
+		M.NameMon = "Gorilla"
+		M.PosQ = CFrame.new(-1598.08911, 35.5501175, 153.377838, 0, 0, 1, 0, 1, -0, -1, 0, 0)
+		M.PosM = CFrame.new(-1129.8836669921875, 40.46354675292969, -525.4237060546875)
 	end
 end
 
